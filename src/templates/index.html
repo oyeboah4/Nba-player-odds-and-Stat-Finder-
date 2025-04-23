@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Stats Analyzer - Upload</title>
+    <style>
+        :root {
+            --background-dark: #000000;
+            --card-background: #1c1c1e;
+            --text-primary: #ffffff;
+            --text-secondary: #86868b;
+            --accent-blue: #0a84ff;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--background-dark);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .upload-container {
+            background-color: var(--card-background);
+            border-radius: 16px;
+            padding: 24px;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 24px 0;
+            text-align: center;
+        }
+
+        .file-input-group {
+            margin-bottom: 20px;
+        }
+
+        .file-input-group label {
+            display: block;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .file-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .file-input::-webkit-file-upload-button {
+            background-color: var(--accent-blue);
+            color: var(--text-primary);
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .required-headers {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background-color: var(--accent-blue);
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .feedback {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .feedback.error {
+            background-color: rgba(255, 69, 58, 0.1);
+            color: #ff453a;
+        }
+
+        .feedback.success {
+            background-color: rgba(50, 215, 75, 0.1);
+            color: #32d74b;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>NBA Stats Analyzer</h1>
+        <form id="uploadForm">
+            <div class="file-input-group">
+                <label for="nbaStatsFile">NBA Stats CSV File</label>
+                <input type="file" id="nbaStatsFile" class="file-input" accept=".csv" required>
+                <div class="required-headers">
+                    Required headers: player_name, team_abbreviation, opponent_team, pts, reb, ast, fg3m
+                </div>
+            </div>
+            <div class="file-input-group">
+                <label for="propsFile">Player Props CSV File</label>
+                <input type="file" id="propsFile" class="file-input" accept=".csv" required>
+                <div class="required-headers">
+                    Required headers: Line Score, Player Name, Team Name, Stat Name, Start Time, Opponent Team, Odds Type
+                </div>
+            </div>
+            <button type="submit" class="submit-button">Analyze Props</button>
+        </form>
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const uploadForm = document.getElementById('uploadForm');
+            const submitButton = uploadForm.querySelector('button[type="submit"]');
+            const feedback = document.getElementById('feedback');
+
+            function showFeedback(message, isError = false) {
+                feedback.textContent = message;
+                feedback.className = `feedback ${isError ? 'error' : 'success'}`;
+                feedback.style.display = 'block';
+            }
+
+            uploadForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
+                
+                const formData = new FormData();
+                const nbaStatsFile = document.getElementById('nbaStatsFile').files[0];
+                const propsFile = document.getElementById('propsFile').files[0];
+                
+                if (!nbaStatsFile || !propsFile) {
+                    showFeedback('Please select both files', true);
+                    return;
+                }
+                
+                formData.append('nbaStatsFile', nbaStatsFile);
+                formData.append('propsFile', propsFile);
+                
+                try {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Uploading...';
+                    
+                    const response = await fetch('/upload', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (response.ok) {
+                        showFeedback(data.message);
+                        // Redirect to results page
+                        window.location.href = data.redirect;
+                    } else {
+                        showFeedback(data.error, true);
+                    }
+                } catch (error) {
+                    showFeedback('An error occurred while uploading files', true);
+                    console.error('Upload error:', error);
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Analyze Props';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
