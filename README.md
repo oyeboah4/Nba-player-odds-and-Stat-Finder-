@@ -26,13 +26,22 @@ cd nba-stats-analyzer
 
 2. Create and activate a virtual environment:
 ```bash
-python -m venv venv
+python -m venv venv # If this doesnt work try python3 instead of python
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
+3. Update pip and install dependencies:
 ```bash
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+If you encounter any issues with the requirements installation, you can install the core dependencies individually:
+```bash
+pip install flask==3.0.2
+pip install pandas==2.2.1
+pip install matplotlib==3.8.3
+pip install python-dotenv==1.0.1
 ```
 
 ## Usage
