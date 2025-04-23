@@ -1,0 +1,493 @@
+/* Dark theme colors */
+:root {
+    --background-dark: #000000;
+    --card-background: #1c1c1e;
+    --text-primary: #ffffff;
+    --text-secondary: #86868b;
+    --success-green: #32d74b;
+    --warning-yellow: #ffd60a;
+    --danger-red: #ff453a;
+    --accent-blue: #0a84ff;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-dark);
+    padding: 16px;
+    z-index: 100;
+}
+
+.search-bar {
+    margin-bottom: 16px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    background-color: #1c1c1e;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.filters-bar {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.filter-chips {
+    display: flex;
+    gap: 12px;
+    padding: 4px 0;
+}
+
+.chip {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 16px;
+    background-color: #1c1c1e;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chip.active {
+    background-color: var(--text-primary);
+    color: var(--background-dark);
+}
+
+.chip.soon {
+    opacity: 0.5;
+}
+
+.nba-logo {
+    height: 16px;
+    margin-right: 6px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    padding: 16px;
+    margin: 0;
+}
+
+.prop-card {
+    background-color: var(--card-background);
+    border-radius: 16px;
+    padding: 16px;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.prop-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.game-info {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.player-info {
+    margin-bottom: 12px;
+}
+
+.player-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.player-position {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.prop-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 8px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.prop-type {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.prop-line {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+.success-rates {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.rate-indicator {
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+
+.rate-indicator:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.rate-indicator.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.rate-indicator.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #2196F3;
+}
+
+.rate-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.rate-value {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.rate-value.high {
+    background-color: rgba(50, 215, 75, 0.1);
+    color: #32d74b;
+}
+
+.rate-value.medium {
+    background-color: rgba(255, 159, 10, 0.1);
+    color: #ff9f0a;
+}
+
+.rate-value.low {
+    background-color: rgba(255, 69, 58, 0.1);
+    color: #ff453a;
+}
+
+.card-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.bet-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--text-primary);
+    color: var(--background-dark);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.prize-pool {
+    color: #5856d6;
+}
+
+.picks-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+}
+
+.more-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 8px;
+    width: 44px;
+    font-size: 20px;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background-color: var(--background-dark);
+    border-top: 1px solid var(--border-color);
+}
+
+.filter-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.visualization-container {
+    display: none;
+    width: 100%;
+    padding: 16px;
+    background-color: #1c1c1e;
+    border-top: 1px solid #2c2c2e;
+}
+
+.visualization-container.active {
+    display: block;
+}
+
+.graph-container {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.loading {
+    color: #86868b;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.loading::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid #86868b;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.error-message {
+    color: #ff453a;
+    background-color: rgba(255, 69, 58, 0.1);
+    padding: 16px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 14px;
+    border: 1px solid rgba(255, 69, 58, 0.2);
+}
+
+.error-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.error-details {
+    color: rgba(255, 69, 58, 0.8);
+}
+
+.timeframe-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.timeframe-tab {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.timeframe-tab.active {
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Filter Modal Styles */
+.filter-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-modal.active {
+    display: flex;
+}
+
+.filter-modal-content {
+    background-color: var(--card-background);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-modal-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.filter-modal-body {
+    padding: 16px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.filter-section {
+    margin-bottom: 24px;
+}
+
+.filter-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+}
+
+.filter-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filter-checkbox:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.filter-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-blue);
+}
+
+.filter-checkbox label {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filter-modal-footer {
+    padding: 16px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.reset-button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.apply-button {
+    background-color: var(--accent-blue);
+    border: none;
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+} 
