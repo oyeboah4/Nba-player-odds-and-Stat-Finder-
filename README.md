@@ -21,7 +21,7 @@ A web application for analyzing NBA player statistics and prop bets. The applica
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/nba-stats-analyzer.git
-cd nba-stats-analyzer
+cd Nba-player-odds-and-Stat-Finder-
 ```
 
 2. Create and activate a virtual environment:
