@@ -20,7 +20,7 @@ A web application for analyzing NBA player statistics and prop bets. The applica
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/Nba-player-odds-and-Stat-Finder-.git
+git clone https://github.com/oyeboah4/Nba-player-odds-and-Stat-Finder-.git
 cd Nba-player-odds-and-Stat-Finder-
 ```
 
