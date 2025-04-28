@@ -11,6 +11,7 @@ Testing app functionality across Windows and macOS environments,
 Solving Python package compatibility issues (NumPy and pip environment setup)
 
 
+
 Alexander Ross role:
 
 
