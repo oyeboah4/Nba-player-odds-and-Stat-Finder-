@@ -1,9 +1,13 @@
 Ohene Yeboah role:
 
-Tested app functionality across multiple browsers (Chrome, Edge, Safari)
-Data processing and cleaning with Pandas (reading and preparing uploaded CSV files)
-Frontend integration support (connecting backend data to the visualization templates)
-Testing app functionality across Windows and macOS environments
+Tested app functionality across multiple browsers (Chrome, Edge, Safari),
+
+Data processing and cleaning with Pandas (reading and preparing uploaded CSV files),
+
+Frontend integration support (connecting backend data to the visualization templates),
+
+Testing app functionality across Windows and macOS environments,
+
 Solving Python package compatibility issues (NumPy and pip environment setup)
 
 
