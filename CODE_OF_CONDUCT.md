@@ -5,23 +5,23 @@ We are committed to fostering a respectful, inclusive, and collaborative environ
 All participants — whether contributing code, reporting issues, or providing feedback — are expected to uphold this code of conduct.
 
 Expected Behavior
-Be respectful of different viewpoints and experiences
-Engage in constructive and professional discussions
+-Be respectful of different viewpoints and experiences
+-Engage in constructive and professional discussions
 
-Accept feedback gracefully and with an open mind
-Help create a welcoming environment for newcomers
-Credit others for their work and contributions
+-Accept feedback gracefully and with an open mind
+-Help create a welcoming environment for newcomers
+-Credit others for their work and contributions
 
 Unacceptable Behavior
-Personal attacks, harassment, or discriminatory language
+-Personal attacks, harassment, or discriminatory language
 
-Posting sexually explicit material
+-Posting sexually explicit material
 
-Trolling, insulting, or derogatory comments
+-Trolling, insulting, or derogatory comments
 
-Disruptive or aggressive behavior that damages collaboration
+-Disruptive or aggressive behavior that damages collaboration
 
-Any other behavior that would be considered unprofessional
+-Any other behavior that would be considered unprofessional
 
 Scope
 This Code of Conduct applies to all project spaces, including GitHub discussions, pull requests, issues, and any other communication related to the project.
@@ -33,6 +33,7 @@ Serious violations may be reported to the appropriate institution or authority i
 📩 Contact
 If you experience or witness unacceptable behavior, please report it to:
 📧 oyeboah689@gmail.com or alexader.ross2003@gmail.com
+
 
 
 
