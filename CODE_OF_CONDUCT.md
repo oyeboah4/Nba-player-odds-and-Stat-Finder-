@@ -1,17 +1,15 @@
 📜 Code of Conduct
+
 Our Commitment
 We are committed to fostering a respectful, inclusive, and collaborative environment for everyone involved in this project.
 All participants — whether contributing code, reporting issues, or providing feedback — are expected to uphold this code of conduct.
 
 Expected Behavior
 Be respectful of different viewpoints and experiences
-
 Engage in constructive and professional discussions
 
 Accept feedback gracefully and with an open mind
-
 Help create a welcoming environment for newcomers
-
 Credit others for their work and contributions
 
 Unacceptable Behavior
