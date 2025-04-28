@@ -1,3 +1,4 @@
+📜 Code of Conduct
 Our Commitment
 We are committed to fostering a respectful, inclusive, and collaborative environment for everyone involved in this project.
 All participants — whether contributing code, reporting issues, or providing feedback — are expected to uphold this code of conduct.
@@ -31,6 +32,9 @@ Enforcement
 Violations of this Code of Conduct may result in temporary or permanent bans from project spaces.
 Serious violations may be reported to the appropriate institution or authority if needed.
 
-Contact
-If you experience or witness unacceptable behavior, please report it to [oyeboah689@gmail.com or alexader.ross2003@gmail.com]
+📩 Contact
+If you experience or witness unacceptable behavior, please report it to:
+📧 oyeboah689@gmail.com or alexader.ross2003@gmail.com
+
+
 
