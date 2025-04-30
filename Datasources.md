@@ -13,9 +13,10 @@ Below are some public sources where users can find relevant data:
 - Useful for finding current betting lines
 - Data may need manual formatting into a CSV
 
-## 📚 Kaggle (Community Datasets)
-- Search for: “NBA stats”, “NBA player props”, “NBA CSV”
-- Example: [https://www.kaggle.com](https://www.kaggle.com)
+## 🧮 The Odds API (Live Sports Betting Data)
+- Website: [https://the-odds-api.com/sports-odds-data/live-sports-odds.html](https://the-odds-api.com/sports-odds-data/live-sports-odds.html)
+- Offers real-time and historical betting odds for multiple sports, including NBA props
+- Users can register for a free API key and use it to export data into CSVs
 
 ---
 
